@@ -2,8 +2,8 @@
 //10/19/2026
 //Challenge #4 Jose's Taco Truck
 //What we did: Using Javascript, we used id's that we labeled in our HTML file to print onto the webpage. We also utilized the classes from the styles.css file.
-//Peer Review Name:
-//Review:
+//Peer Review Name: Zackary Santos
+//Review: Everything looks good from what I can see.
 
 # Jose's Taco Truck
 
