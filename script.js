@@ -41,14 +41,14 @@ specialName.textContent = special.name;
 function price (num){
   let price = num.price;
   return `Today's special price is $${price}.`;
-}
+};
 
 const specialPrice = document.getElementById("special-price");
 specialPrice.textContent = price(special);
 
 if(special.isFeatured){
   specialName.classList.add("featured");
-}
+};
 
 // Status
 const statusLine = document.getElementById("status");
@@ -57,7 +57,7 @@ statusLine.textContent = "Open now"
 if(truck.soldOut){
   statusLine.textContent = "Sold out";
   statusLine.classList.add("closed");
-}
+};
 
 // Crew List
 const crewList = document.getElementById("crew-list");
@@ -66,35 +66,21 @@ for(let i = 0; i < crew.length; i++){
   const item = document.createElement("li");
   item.textContent = crew[i];
   crewList.appendChild(item);
-}
+};
 
 // Schedule
-const dayOne = document.getElementById("day-one");
-const dayOneLoc = document.getElementById("day-one-location");
-dayOne.textContent = schedule[0].day;
-dayOneLoc.textContent = schedule[0].location;
+const rows = document.querySelectorAll("#truck-schedule tr");
 
-const dayTwo = document.getElementById("day-two");
-const dayTwoLoc = document.getElementById("day-two-location");
-dayTwo.textContent = schedule[1].day;
-dayTwoLoc.textContent = schedule[1].location;
+for(let i = 0; i < schedule.length; i++){
+  const row = rows[i];
 
-const dayThree = document.getElementById("day-three");
-const dayThreeLoc = document.getElementById("day-three-location");
-dayThree.textContent = schedule[2].day;
-dayThreeLoc.textContent = schedule[2].location;
-
-const dayFour = document.getElementById("day-four");
-const dayFourLoc = document.getElementById("day-four-location");
-dayFour.textContent = schedule[3].day;
-dayFourLoc.textContent = schedule[3].location;
-
-const dayFive = document.getElementById("day-five");
-const dayFiveLoc = document.getElementById("day-five-location");
-dayFive.textContent = schedule[4].day;
-dayFiveLoc.textContent = schedule[4].location;
+  row.children[0].textContent = schedule[i].day;
+  row.children[1].textContent = schedule[i].location;
+}
 
 // Today Index
+const dayOne = document.getElementById("day-one");
+const dayOneLoc = document.getElementById("day-one-location");
 dayOne.classList.add("today");
 dayOneLoc.classList.add("today");
 
